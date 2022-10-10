@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Chef>
+
+<div class="container text-center px-2">
+    @* <h1 class="display-4">Welcome to Chefs N' Dishes!</h1> *@
+    <h3>Chefs  |  <a href="/dishes">Dishes</a>  |  <a href="/chefs/new">Add a Chef</a>  |  <a href="/dishes/new">Add a Dish</a></h3>
+    <div class="d-flex flex-column justify-content-center mt-5">
+        <h2>Check out our roster of chefs!</h2>
+        <hr width="100%"/><br/>
+        <table class="card bg-light">
+            <thead>
+                <tr class="d-flex justify-content-around">
+                    <td class="w-25">Name</td>
+                    <td class="bg-secondary w-25">Age</td>
+                    <td class="w-25"># of Dishes</td>
+                </tr>
+            </thead>
+            
+            @foreach(Chef chef in Model){
+                var Age = DateTime.Now.Date - chef.DOB;
+                double ChefAge = Math.Floor(Age.TotalDays / 365.25);
+                
+                <tr class="d-flex justify-content-around">
+                    <td class="w-25">@chef.FirstName @chef.LastName</td>
+                    <td class="bg-secondary w-25">@ChefAge</td>
+                    <td class="w-25">@chef.ChefDishes.Count()</td>
+                </tr>
+            }
+        </table>
+    
+    </div>
+</div>

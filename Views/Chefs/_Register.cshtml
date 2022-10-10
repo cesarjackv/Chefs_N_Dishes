@@ -1,0 +1,32 @@
+@model Chef
+
+<form class="form-group d-flex justify-content-between m-5" asp-action="Register" asp-controller="Chefs" method="post">
+    <div class="d-flex flex-column justify-content-between mx-2 ">
+    <h1 class="text-center">Add a Chef</h1>
+    <hr>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+        <br>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+        <br>
+        <label asp-for="Email"></label>
+        <input asp-for="Email">
+        <span asp-validation-for="Email" class="text-danger"></span>
+        <br>
+        <label asp-for="DOB"></label>
+        <input asp-for="DOB">
+        <span asp-validation-for="DOB" class="text-danger"></span>
+        <br>
+        <label asp-for="Password"></label>
+        <input asp-for="Password">
+        <span asp-validation-for="Password" class="text-danger"></span>
+        <br>
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword">
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        <button class="btn btn-secondary mt-3" type="submit">Add a Chef</button>
+    </div>
+</form>
